@@ -1,0 +1,4 @@
+# logback slf4j
+logging:
+  path: /tmp/springboot-study/
+  config: classpath:logback-spring.xml

@@ -1,0 +1,16 @@
+# jdbc template
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: voctrals
+
+# mybatis
+mybatis:
+#  config-location:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: voctrals.study.springboot.mybatis.entity
+  configuration:
+    map-underscore-to-camel-case: true

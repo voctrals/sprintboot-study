@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <appender name="BIZ_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_PATH}/biz.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/biz-%d{yyyyMMdd}.log.%i</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>2</maxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread]: %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- 日志级别 -->
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.mybatis" level="DEBUG"/>
+
+    <!-- 业务逻辑日志 -->
+    <logger name="voctrals.study.springboot" level="DEBUG" additivity="true">
+        <appender-ref ref="BIZ_FILE"/>
+    </logger>
+
+
+</configuration>
