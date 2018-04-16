@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>voctrals.study</groupId>
-        <artifactId>springboot</artifactId>
+        <artifactId>springboot-study</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
