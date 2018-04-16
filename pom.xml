@@ -15,6 +15,7 @@
         <module>springboot-basic</module>
         <module>springboot-jdbctemplate</module>
         <module>springboot-mybatis</module>
+        <module>springboot-mybatis-redis</module>
     </modules>
 
     <parent>
